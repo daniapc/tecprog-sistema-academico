@@ -35,11 +35,12 @@ Departamento* Disciplina::getDpto (){
     return pDptoAssociado;
 }
 
-void Disciplina::incluirAluno(Aluno* pa){
+void Disciplina::incluirAluno(Aluno* pa, float n1, float n2, float f){
     //Importantíssimo criar esse ponteiro auxiliar do tipo ElAluno, alocá-lo e fazê-lo receber uma cópia do objeto
     ElAluno *paux = NULL;
     paux = new ElAluno();
     paux->setAluno(pa);
+    paux->setBoletim(n1, n2, f);
     
     if ((contaAluno < tamAluno) && (pa != NULL)){
         if (pAlunPrim == NULL){

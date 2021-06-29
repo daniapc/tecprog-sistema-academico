@@ -14,6 +14,11 @@ class ElAluno{
 private:
     Aluno *pAluno;
 
+    int   faltas;
+    float notaPri,
+          notaSeg,
+          medFinal;
+
 public:
     ElAluno();
     ~ElAluno();
@@ -25,8 +30,8 @@ public:
     Aluno* getAluno();
     string getNome();
     int getRa();
+    void setBoletim(float n1, float n2, float f);
     void getBoletim();
-
 };
 
 #endif

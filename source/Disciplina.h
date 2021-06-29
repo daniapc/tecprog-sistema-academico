@@ -28,7 +28,7 @@ public:
     void setDpto (Departamento* pdpto);
     Departamento* getDpto ();
 
-    void incluirAluno (Aluno* pa);
+    void incluirAluno (Aluno* pa, float n1, float n2, float f);
     void listarAluno ();
     void listarAluno2();
 

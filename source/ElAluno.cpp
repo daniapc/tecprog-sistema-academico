@@ -21,6 +21,16 @@ string ElAluno::getNome(){
 int ElAluno::getRa(){
     return pAluno->getRa();
 }
+void ElAluno::setBoletim(float n1, float n2, float f){
+    notaPri = n1;
+    notaSeg = n2;
+    medFinal = (n1 + n2)/2;
+    faltas = f;
+}
 void ElAluno::getBoletim(){
-    pAluno->imprimeBoletim();
+    cout << "Nota 1: " << notaPri
+         << "\tNota 2: " << notaSeg
+         << "\tMedia Final: " << medFinal
+         << "\tFaltas: " << faltas
+         << "\n";
 }
