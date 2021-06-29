@@ -21,3 +21,6 @@ string ElAluno::getNome(){
 int ElAluno::getRa(){
     return pAluno->getRa();
 }
+void ElAluno::getBoletim(){
+    pAluno->imprimeBoletim();
+}

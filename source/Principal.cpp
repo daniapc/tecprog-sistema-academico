@@ -45,13 +45,13 @@ void Principal::InicializaAlunos(){
     Lucas.setRa  (2131231);
     Mint.setRa   (5252341);
 
-    Mint.setDisc (&Fisica_1);
-    Lucas.setDisc (&Fisica_1);  
-    Daniel.setDisc (&Fisica_1);
-    Mint.setDisc (&Est_Dados_1);  
-    Daniel.setDisc (&Est_Dados_1);
-    Daniel.setDisc (&Tec_Prog);
-    Lucas.setDisc  (&Fund_Prog);
+    Mint.setDisc (&Fisica_1, 5,5, 5);
+    Lucas.setDisc (&Fisica_1, 6.6, 2.6, 6);  
+    Daniel.setDisc (&Fisica_1, 6.6, 5.6, 6);
+    Mint.setDisc (&Est_Dados_1, 6.6, 8.6, 4);  
+    Daniel.setDisc (&Est_Dados_1, 67.6, 6.6, 6);
+    Daniel.setDisc (&Tec_Prog, 6.6, 5.6, 6);
+    Lucas.setDisc  (&Fund_Prog, 6.6, 8.6, 6);
 }
 void Principal::InicializaProfessores(){
     //Inicializa Professores

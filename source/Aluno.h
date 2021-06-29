@@ -11,7 +11,11 @@ class ElAluno;
 class Aluno: public Pessoa
 {
 private:
-    int ra;
+    int ra,
+        faltas;
+    float notaPri,
+          notaSeg,
+          medFinal;
     Disciplina *pDiscAssociada;
 
 public: 
@@ -22,8 +26,9 @@ public:
     string getNome();
     void setRa(int n);
     int getRa();
-    void setDisc(Disciplina *pd);
+    void setDisc(Disciplina *pd, float n1, float n2, float f);
     Disciplina* getDisc();
+    void imprimeBoletim();
 };
 
 #endif

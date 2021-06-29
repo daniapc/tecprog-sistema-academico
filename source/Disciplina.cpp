@@ -65,7 +65,8 @@ void Disciplina::listarAluno(){
         cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
-             << nome << ".\n";
+             << nome << " com o seguinte boletim:\n";
+        pAux->getBoletim();
         pAux = pAux->pAlunProx;
     }
 }
@@ -77,7 +78,8 @@ void Disciplina::listarAluno2(){
         cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
-             << nome << ".\n";
+             << nome << " com o seguinte boletim:\n";
+        pAux->getBoletim();
         pAux = pAux->pAlunAnte;
     }
 }

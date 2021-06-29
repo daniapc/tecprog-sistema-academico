@@ -25,6 +25,7 @@ public:
     Aluno* getAluno();
     string getNome();
     int getRa();
+    void getBoletim();
 
 };
 
