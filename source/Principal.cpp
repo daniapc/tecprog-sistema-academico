@@ -45,8 +45,9 @@ void Principal::InicializaAlunos(){
     Lucas.setRa  (2131231);
     Mint.setRa   (5252341);
 
+    /*Problema inicial devidamente corrigido implementando-se a classe Elemento Aluno*/
     Mint.setDisc (&Fisica_1);
-    Lucas.setDisc (&Fisica_1);  
+    Lucas.setDisc (&Fisica_1);  //Lucas não será mais apagado sz
     Daniel.setDisc (&Fisica_1);
     Mint.setDisc (&Est_Dados_1);  
     Daniel.setDisc (&Est_Dados_1);
@@ -139,6 +140,14 @@ void Principal::ListaDisc(){
     //Tec_Prog.listarAluno();
     Fisica_1.listarAluno();
     Est_Dados_1.listarAluno();
+    /*
+    Output:
+    Estudante Anna Julia de RA 5252341 se matriculou em Fisica Teorica 1.
+    Estudante Lucas de RA 2131231 se matriculou em Fisica Teorica 1.
+    Estudante Daniel de RA 2240246 se matriculou em Fisica Teorica 1.
+    Estudante Anna Julia de RA 5252341 se matriculou em Estrutura de Dados 1.
+    Estudante Daniel de RA 2240246 se matriculou em Estrutura de Dados 1.
+    */
 }
 
 void Principal::Executar(){
