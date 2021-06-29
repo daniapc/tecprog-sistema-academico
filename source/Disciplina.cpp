@@ -2,7 +2,7 @@
 #include "Departamento.h"
 
 Disciplina::Disciplina(int na):
-ObjAlunos(nome, na){
+ObjAlunos(na){
     pDptoAssociado = NULL;
     pDiscProx = NULL;
     pDiscAnte = NULL;
@@ -34,8 +34,8 @@ void Disciplina::incluirAluno(Aluno* pa){
     ObjAlunos.incluirAluno(pa);
 }
 void Disciplina::listarAluno(){
-    ObjAlunos.listarAluno();
+    ObjAlunos.listarAluno(nome);
 }
 void Disciplina::listarAluno2(){
-    ObjAlunos.listarAluno2();
+    ObjAlunos.listarAluno2(nome);
 }

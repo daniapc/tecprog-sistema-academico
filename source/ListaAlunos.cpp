@@ -1,16 +1,15 @@
 #include "ListaAlunos.h"
 
-
-ListaAlunos::ListaAlunos(string n, int na){
+ListaAlunos::ListaAlunos(int na){
     pElAlunAtual = NULL;
     pElAlunPrim = NULL;    
-    nome = n;
+    //nome = n;
     contaAluno = 0;
     tamAluno = na;
 }
 ListaAlunos::~ListaAlunos(){
-    ElAluno *paux1 = NULL, 
-            *paux2 = NULL;
+    ElAluno *paux1, 
+            *paux2;
     paux1 = pElAlunPrim;
     paux2 = paux1;
     while (paux1 != NULL){
@@ -25,7 +24,6 @@ ListaAlunos::~ListaAlunos(){
 
 void ListaAlunos::incluirAluno (Aluno* pa){
     //Importantíssimo criar esse ponteiro auxiliar do tipo ElAluno, alocá-lo e fazê-lo receber uma cópia do objeto
-    cout << tamAluno << "\n";
 
     if ((contaAluno < tamAluno) && (pa != NULL)){
         ElAluno *paux = NULL;
@@ -41,12 +39,13 @@ void ListaAlunos::incluirAluno (Aluno* pa){
             pElAlunAtual = paux; 
         }
         contaAluno++;
+        //cout << nome << " " << tamAluno << " " << contaAluno << "\n";
     }
     else {
         cout << "Turma cheia!\n";
     }
 }
-void ListaAlunos::listarAluno (){
+void ListaAlunos::listarAluno (string n){
     ElAluno* pAux = NULL;
     pAux = pElAlunPrim;
 
@@ -54,11 +53,11 @@ void ListaAlunos::listarAluno (){
         cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
-             << nome << ".\n";
+             << n << ".\n";
         pAux = pAux->pAlunProx;
     }
 }
-void ListaAlunos::listarAluno2(){
+void ListaAlunos::listarAluno2(string n){
     ElAluno* pAux = NULL;
     pAux = pElAlunAtual;
 
@@ -66,7 +65,7 @@ void ListaAlunos::listarAluno2(){
         cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
-             << nome << ".\n";
+             << n << ".\n";
         pAux = pAux->pAlunAnte;
     }
 }

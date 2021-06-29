@@ -14,7 +14,7 @@ private:
     ListaAlunos ObjAlunos;
     
 public:
-    Disciplina(int na = 45);
+    Disciplina(int na = 45); //não consigo alterar a quantidade de estudantes possível
     ~Disciplina();
     
     Disciplina *pDiscProx, //fica público para poder acessar
