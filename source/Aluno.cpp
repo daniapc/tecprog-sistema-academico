@@ -1,21 +1,16 @@
 #include "Aluno.h"
+#include "ElAluno.h"
 #include "Disciplina.h"
 
 Aluno::Aluno(int diaNa, int mesNa, int anoNa, string nome):
 Pessoa (diaNa, mesNa, anoNa, nome) {
     pDiscAssociada = NULL;
-    pAlunProx = NULL;
-    pAlunAnte = NULL;
 }
 Aluno::Aluno(){
     pDiscAssociada = NULL;
-    pAlunProx = NULL;
-    pAlunAnte = NULL;
 }
 Aluno::~Aluno(){
     pDiscAssociada = NULL;
-    pAlunProx = NULL;
-    pAlunAnte = NULL;
 }
 string Aluno::getNome(){
     return nomeP;

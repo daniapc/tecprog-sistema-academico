@@ -36,15 +36,20 @@ Departamento* Disciplina::getDpto (){
 }
 
 void Disciplina::incluirAluno(Aluno* pa){
+    //Importantíssimo criar esse ponteiro auxiliar do tipo ElAluno, alocá-lo e fazê-lo receber uma cópia do objeto
+    ElAluno *paux = NULL;
+    paux = new ElAluno();
+    paux->setAluno(pa);
+    
     if ((contaAluno < tamAluno) && (pa != NULL)){
         if (pAlunPrim == NULL){
-            pAlunPrim = pa;
-            pAlunAtual = pa;
+            pAlunPrim = paux;
+            pAlunAtual = paux;
         }
         else{
-            pAlunAtual->pAlunProx = pa;
-            pa->pAlunAnte = pAlunAtual;
-            pAlunAtual = pa; 
+            pAlunAtual->pAlunProx = paux;
+            paux->pAlunAnte = pAlunAtual;
+            pAlunAtual = paux; 
         }
         contaAluno++;
     }
@@ -53,7 +58,7 @@ void Disciplina::incluirAluno(Aluno* pa){
     }
 }
 void Disciplina::listarAluno(){
-    Aluno* pAux;
+    ElAluno* pAux;
     pAux = pAlunPrim;
 
     while (pAux != NULL){
@@ -65,7 +70,7 @@ void Disciplina::listarAluno(){
     }
 }
 void Disciplina::listarAluno2(){
-    Aluno* pAux;
+    ElAluno* pAux;
     pAux = pAlunAtual;
 
     while (pAux != NULL){

@@ -45,12 +45,13 @@ void Principal::InicializaAlunos(){
     Lucas.setRa  (2131231);
     Mint.setRa   (5252341);
 
+    Mint.setDisc (&Fisica_1);
+    Lucas.setDisc (&Fisica_1);  
+    Daniel.setDisc (&Fisica_1);
+    Mint.setDisc (&Est_Dados_1);  
     Daniel.setDisc (&Est_Dados_1);
     Daniel.setDisc (&Tec_Prog);
     Lucas.setDisc  (&Fund_Prog);
-    Mint.setDisc (&Fisica_1);
-    Daniel.setDisc (&Fisica_1);
-    Lucas.setDisc (&Fisica_1);
 }
 void Principal::InicializaProfessores(){
     //Inicializa Professores
@@ -130,20 +131,22 @@ void Principal::ListaDptos(){
     Princeton.listaDeptos();
 }
 void Principal::ListaDisc(){
-    //Informatica.listarDisc();
-    Informatica.listarDisc2();
+    Informatica.listarDisc();
+    //Informatica.listarDisc2();
     Eletronica.listarDisc();
-    Fund_Prog.listarAluno();
-    Tec_Prog.listarAluno();
-    Fisica_1.listarAluno2();
+
+    //Fund_Prog.listarAluno();
+    //Tec_Prog.listarAluno();
+    Fisica_1.listarAluno();
+    Est_Dados_1.listarAluno();
 }
 
 void Principal::Executar(){
-    ListaIdades();
+    /*ListaIdades();
     cout << "\n";
     ListaUnivs();
     cout << "\n";
     ListaDptos();
-    cout << "\n";
+    cout << "\n";*/
     ListaDisc();
 }
