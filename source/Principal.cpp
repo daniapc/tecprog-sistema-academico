@@ -46,13 +46,13 @@ void Principal::InicializaAlunos(){
     Mint.setRa   (5252341);
 
     /*Problema inicial devidamente corrigido implementando-se a classe Elemento Aluno*/
-    Mint.setDisc (&Fisica_1);
+    /*Mint.setDisc (&Fisica_1);
     Lucas.setDisc (&Fisica_1);  //Lucas não será mais apagado sz
     Daniel.setDisc (&Fisica_1);
     Mint.setDisc (&Est_Dados_1);  
     Daniel.setDisc (&Est_Dados_1);
     Daniel.setDisc (&Tec_Prog);
-    Lucas.setDisc  (&Fund_Prog);
+    Lucas.setDisc  (&Fund_Prog);*/
 }
 void Principal::InicializaProfessores(){
     //Inicializa Professores
@@ -104,6 +104,12 @@ void Principal::InicializaDisciplinas(){
     Est_Dados_1.setDpto(&Informatica);
     Fund_Prog.setDpto  (&Informatica);
     Circ_Elet.setDpto  (&Eletronica);
+
+    Fisica_1.incluirAluno (&Daniel);
+    Fisica_1.incluirAluno (&Mint);
+    Fisica_1.incluirAluno (&Lucas);
+    Est_Dados_1.incluirAluno (&Daniel);
+    Est_Dados_1.incluirAluno (&Lucas);
 }
 
 void Principal::ListaIdades(){

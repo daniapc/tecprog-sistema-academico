@@ -2,7 +2,7 @@
 #define _DISCIPLINA_H
 
 #include "stdafx.h"
-#include "ElAluno.h"
+#include "ListaAlunos.h"
 
 class Departamento;
 
@@ -11,10 +11,7 @@ class Disciplina
 private:
     string nome;
     Departamento* pDptoAssociado;
-    ElAluno *pElAlunPrim,
-            *pElAlunAtual;
-    int tamAluno,
-        contaAluno;
+    ListaAlunos ObjAlunos;
     
 public:
     Disciplina(int na = 45);
