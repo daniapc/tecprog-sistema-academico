@@ -57,7 +57,7 @@ void Disciplina::listarAluno(){
     pAux = pAlunPrim;
 
     while (pAux != NULL){
-        cout << "O aluno "
+        cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
              << nome << ".\n";

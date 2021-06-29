@@ -1,13 +1,13 @@
 #include "Aluno.h"
 #include "Disciplina.h"
 
-Aluno::Aluno(): Pessoa(){
+Aluno::Aluno(int diaNa, int mesNa, int anoNa, string nome):
+Pessoa (diaNa, mesNa, anoNa, nome) {
     pDiscAssociada = NULL;
     pAlunProx = NULL;
     pAlunAnte = NULL;
 }
-Aluno::Aluno(int diaNa, int mesNa, int anoNa, string nome):
-Pessoa (diaNa, mesNa, anoNa, nome) {
+Aluno::Aluno(){
     pDiscAssociada = NULL;
     pAlunProx = NULL;
     pAlunAnte = NULL;
