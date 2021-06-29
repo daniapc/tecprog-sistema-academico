@@ -45,12 +45,16 @@ void Principal::InicializaAlunos(){
     Lucas.setRa  (2131231);
     Mint.setRa   (5252341);
 
-    Daniel.setDisc (&Est_Dados_1);
-    Daniel.setDisc (&Tec_Prog);
-    Lucas.setDisc  (&Fund_Prog);
+    /*Esse trecho gera problema porque perde-se a conexão da lista de Física por conta do
+    ponteiro de estrutura de dados que "pula" o Lucas*/
+    //Daniel.setDisc (&Tec_Prog);
+    //Lucas.setDisc  (&Fund_Prog);
     Mint.setDisc (&Fisica_1);
-    Daniel.setDisc (&Fisica_1);
     Lucas.setDisc (&Fisica_1);
+    Daniel.setDisc (&Fisica_1);
+    Mint.setDisc (&Est_Dados_1);    
+    Daniel.setDisc (&Est_Dados_1);
+
 }
 void Principal::InicializaProfessores(){
     //Inicializa Professores
@@ -133,9 +137,18 @@ void Principal::ListaDisc(){
     //Informatica.listarDisc();
     Informatica.listarDisc2();
     Eletronica.listarDisc();
-    Fund_Prog.listarAluno();
-    Tec_Prog.listarAluno();
-    Fisica_1.listarAluno2();
+    
+    //Fund_Prog.listarAluno();
+    //Tec_Prog.listarAluno();
+    Fisica_1.listarAluno();
+    Est_Dados_1.listarAluno();
+    /*
+    Output:
+    O aluno Anna Julia de RA 5252341 se matriculou em Fisica Teorica 1.
+    O aluno Daniel de RA 2240246 se matriculou em Fisica Teorica 1.
+    O aluno Anna Julia de RA 5252341 se matriculou em Estrutura de Dados 1.
+    O aluno Daniel de RA 2240246 se matriculou em Estrutura de Dados 1.
+    */
 }
 
 void Principal::Executar(){
