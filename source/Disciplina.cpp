@@ -5,17 +5,31 @@ Disciplina::Disciplina(int na){
     pDptoAssociado = NULL;
     pDiscProx = NULL;
     pDiscAnte = NULL;
-    pAlunAtual = NULL;
-    pAlunPrim = NULL;
+    pElAlunAtual = NULL;
+    pElAlunPrim = NULL;
     contaAluno = 0;
     tamAluno = na;
 }
 Disciplina::~Disciplina(){
+    ElAluno *paux1, *paux2;
+    paux1 = pElAlunPrim;
+    while (paux1 != NULL){
+        paux2 = paux1->pAlunProx;
+        delete(paux1);
+        paux1 = paux2;
+    }   
+    /* //Outra solução: acessa-se diretamente pElAlunoPrim substituindo por paux2 sem necessidade de criar
+    while (paux1 != NULL){
+        pElAlunPrim = pElAlunPrim->pAlunProx;
+        delete(paux1);
+        paux1 = pElAlunPrim;
+    }*/
+
     pDptoAssociado = NULL;
     pDiscProx = NULL;
     pDiscAnte = NULL;
-    pAlunAtual = NULL;
-    pAlunPrim = NULL;
+    pElAlunAtual = NULL;
+    pElAlunPrim = NULL;
 }
 
 void Disciplina::setNome (string n){
@@ -42,14 +56,14 @@ void Disciplina::incluirAluno(Aluno* pa){
     paux->setAluno(pa);
     
     if ((contaAluno < tamAluno) && (pa != NULL)){
-        if (pAlunPrim == NULL){
-            pAlunPrim = paux;
-            pAlunAtual = paux;
+        if (pElAlunPrim == NULL){
+            pElAlunPrim = paux;
+            pElAlunAtual = paux;
         }
         else{
-            pAlunAtual->pAlunProx = paux;
-            paux->pAlunAnte = pAlunAtual;
-            pAlunAtual = paux; 
+            pElAlunAtual->pAlunProx = paux;
+            paux->pAlunAnte = pElAlunAtual;
+            pElAlunAtual = paux; 
         }
         contaAluno++;
     }
@@ -59,7 +73,7 @@ void Disciplina::incluirAluno(Aluno* pa){
 }
 void Disciplina::listarAluno(){
     ElAluno* pAux;
-    pAux = pAlunPrim;
+    pAux = pElAlunPrim;
 
     while (pAux != NULL){
         cout << "Estudante "
@@ -71,7 +85,7 @@ void Disciplina::listarAluno(){
 }
 void Disciplina::listarAluno2(){
     ElAluno* pAux;
-    pAux = pAlunAtual;
+    pAux = pElAlunAtual;
 
     while (pAux != NULL){
         cout << "Estudante "

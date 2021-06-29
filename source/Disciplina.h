@@ -11,8 +11,8 @@ class Disciplina
 private:
     string nome;
     Departamento* pDptoAssociado;
-    ElAluno *pAlunPrim,
-            *pAlunAtual;
+    ElAluno *pElAlunPrim,
+            *pElAlunAtual;
     int tamAluno,
         contaAluno;
     
