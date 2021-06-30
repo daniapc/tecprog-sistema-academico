@@ -34,6 +34,7 @@ void Disciplina::incluirAluno(Aluno* pa){
     ObjAlunos.incluirAluno(pa);
 }
 void Disciplina::listarAluno(){
+    //Burda colocou no dele um cout préveo com o nome da disciplina incluído aqui.
     ObjAlunos.listarAluno(nome);
 }
 void Disciplina::listarAluno2(){
