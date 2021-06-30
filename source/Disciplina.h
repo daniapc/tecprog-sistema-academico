@@ -29,6 +29,7 @@ public:
     void listarAluno ();
     void listarAluno2();
 
+    //void setTamAlunos(int na);
 };
 
 #endif

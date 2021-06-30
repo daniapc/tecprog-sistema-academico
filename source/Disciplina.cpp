@@ -39,3 +39,6 @@ void Disciplina::listarAluno(){
 void Disciplina::listarAluno2(){
     ObjAlunos.listarAluno2(nome);
 }
+/*void Disciplina::setTamAlunos(int na){
+    ObjAlunos.setTamAluno(na);
+}*/

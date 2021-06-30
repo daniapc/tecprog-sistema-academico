@@ -20,6 +20,9 @@ public:
     void incluirAluno (Aluno* pa);
     void listarAluno (string n); //queria evitar de passar parâmetro mas somente assim que consegui
     void listarAluno2(string n);
+
+    //void setTamAluno(int na);
+    //int getTamAluno();
 };
 
 #endif

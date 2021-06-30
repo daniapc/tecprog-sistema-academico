@@ -24,7 +24,7 @@ ListaAlunos::~ListaAlunos(){
 
 void ListaAlunos::incluirAluno (Aluno* pa){
     //Importantíssimo criar esse ponteiro auxiliar do tipo ElAluno, alocá-lo e fazê-lo receber uma cópia do objeto
-
+    cout << tamAluno << "\n";
     if ((contaAluno < tamAluno) && (pa != NULL)){
         ElAluno *paux = NULL;
         paux = new ElAluno();
@@ -69,3 +69,9 @@ void ListaAlunos::listarAluno2(string n){
         pAux = pAux->pAlunAnte;
     }
 }
+/*void ListaAlunos::setTamAluno(int na){
+    tamAluno = na;
+}
+int ListaAlunos::getTamAluno(){
+    return tamAluno;
+}*/
