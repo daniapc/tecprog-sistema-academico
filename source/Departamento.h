@@ -2,7 +2,8 @@
 #define _DEPARTAMENTO_H_
 
 #include "stdafx.h"
-#include "Disciplina.h"
+
+#include "ListaDisciplinas.h"
 
 class Universidade;
 
@@ -11,15 +12,12 @@ class Departamento
 private:
     string nome;
     Universidade *pUnivAssociada;
-    Disciplina *pDiscPrim,
-               *pDiscAtual;
+    
+    ListaDisciplinas *pObjDisciplinas;
 
 public:
     Departamento();
     ~Departamento();
-
-    Departamento *pDptoProx,
-                 *pDptoAnte;
     
     void setNome (string n = "");
     string getNome ();

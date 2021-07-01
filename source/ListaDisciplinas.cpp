@@ -1,15 +1,15 @@
-#include "ListaAlunos.h"
+#include "ListaDisciplinas.h"
 
-ListaAlunos::ListaAlunos(int na){
+ListaDisciplinas::ListaDisciplinas(int na){
     pElAlunAtual = NULL;
     pElAlunPrim = NULL;    
     cout << na << "\n";
-    contaAluno = 0;
-    tamAluno = na;
+    contaDisc = 0;
+    tamDisc = na;
 }
-ListaAlunos::~ListaAlunos(){
-    ElAluno *paux1, 
-            *paux2;
+ListaDisciplinas::~ListaDisciplinas(){
+    ElDisciplina *paux1, 
+                 *paux2;
     paux1 = pElAlunPrim;
     paux2 = paux1;
     while (paux1 != NULL){
@@ -22,13 +22,13 @@ ListaAlunos::~ListaAlunos(){
     pElAlunPrim = NULL;      
 }
 
-void ListaAlunos::incluirAluno (Aluno* pa){
-    //Importantíssimo criar esse ponteiro auxiliar do tipo ElAluno, alocá-lo e fazê-lo receber uma cópia do objeto
-    //cout << tamAluno << "\n";
-    if ((contaAluno < tamAluno) && (pa != NULL)){
-        ElAluno *paux = NULL;
-        paux = new ElAluno();
-        paux->setAluno(pa);
+void ListaDisciplinas::incluirDisc (Disciplina* pd){
+    //Importantíssimo criar esse ponteiro auxiliar do tipo ElDisc, alocá-lo e fazê-lo receber uma cópia do objeto
+    //cout << tamDisc << "\n";
+    if ((contaDisc < tamDisc) && (pd != NULL)){
+        ElDisciplina *paux = NULL;
+        paux = new ElDisciplina();
+        paux->setDisc(pd);
         if (pElAlunPrim == NULL){
             pElAlunPrim = paux;
             pElAlunAtual = paux;
@@ -38,32 +38,32 @@ void ListaAlunos::incluirAluno (Aluno* pa){
             paux->pAlunAnte = pElAlunAtual;
             pElAlunAtual = paux; 
         }
-        contaAluno++;    }
+        contaDisc++;    }
     else {
-        cout << "Turma cheia!\n";
+        cout << "Quantidade de disciplinas lotada.\n";
     }
 }
-void ListaAlunos::listarAluno (string n){
-    ElAluno* pAux = NULL;
+void ListaDisciplinas::listarDisc (string n){
+    ElDisciplina* pAux = NULL;
     pAux = pElAlunPrim;
-
+/*
     while (pAux != NULL){
         cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
              << n << ".\n";
         pAux = pAux->pAlunProx;
-    }
+    }*/
 }
-void ListaAlunos::listarAluno2(string n){
-    ElAluno* pAux = NULL;
+void ListaDisciplinas::listarDisc2(string n){
+    ElDisciplina* pAux = NULL;
     pAux = pElAlunAtual;
-
+/*
     while (pAux != NULL){
         cout << "Estudante "
              << pAux->getNome() << " de RA "
              << pAux->getRa() << " se matriculou em "
              << n << ".\n";
         pAux = pAux->pAlunAnte;
-    }
+    }*/
 }
