@@ -1,25 +1,24 @@
 #include "ListaDisciplinas.h"
 
 ListaDisciplinas::ListaDisciplinas(int na){
-    pElAlunAtual = NULL;
-    pElAlunPrim = NULL;    
-    cout << na << "\n";
+    pElDiscAtual = NULL;
+    pElDiscPrim = NULL;    
     contaDisc = 0;
     tamDisc = na;
 }
 ListaDisciplinas::~ListaDisciplinas(){
     ElDisciplina *paux1, 
                  *paux2;
-    paux1 = pElAlunPrim;
+    paux1 = pElDiscPrim;
     paux2 = paux1;
     while (paux1 != NULL){
-        paux2 = paux1->pAlunProx;
+        paux2 = paux1->pDiscProx;
         delete(paux1);
         paux1 = paux2;
     }       
 
-    pElAlunAtual = NULL;
-    pElAlunPrim = NULL;      
+    pElDiscAtual = NULL;
+    pElDiscPrim = NULL;      
 }
 
 void ListaDisciplinas::incluirDisc (Disciplina* pd){
@@ -29,14 +28,14 @@ void ListaDisciplinas::incluirDisc (Disciplina* pd){
         ElDisciplina *paux = NULL;
         paux = new ElDisciplina();
         paux->setDisc(pd);
-        if (pElAlunPrim == NULL){
-            pElAlunPrim = paux;
-            pElAlunAtual = paux;
+        if (pElDiscPrim == NULL){
+            pElDiscPrim = paux;
+            pElDiscAtual = paux;
         }
         else{
-            pElAlunAtual->pAlunProx = paux;
-            paux->pAlunAnte = pElAlunAtual;
-            pElAlunAtual = paux; 
+            pElDiscAtual->pDiscProx = paux;
+            paux->pDiscAnte = pElDiscAtual;
+            pElDiscAtual = paux; 
         }
         contaDisc++;    }
     else {
@@ -45,25 +44,23 @@ void ListaDisciplinas::incluirDisc (Disciplina* pd){
 }
 void ListaDisciplinas::listarDisc (string n){
     ElDisciplina* pAux = NULL;
-    pAux = pElAlunPrim;
-/*
+    pAux = pElDiscPrim;
+
     while (pAux != NULL){
-        cout << "Estudante "
-             << pAux->getNome() << " de RA "
-             << pAux->getRa() << " se matriculou em "
+        cout << "A disciplina "
+             << pAux->getNome() << " pertence ao "
              << n << ".\n";
-        pAux = pAux->pAlunProx;
-    }*/
+        pAux = pAux->pDiscProx;
+    }
 }
 void ListaDisciplinas::listarDisc2(string n){
     ElDisciplina* pAux = NULL;
-    pAux = pElAlunAtual;
-/*
+    pAux = pElDiscAtual;
+
     while (pAux != NULL){
-        cout << "Estudante "
-             << pAux->getNome() << " de RA "
-             << pAux->getRa() << " se matriculou em "
+        cout << "A disciplina "
+             << pAux->getNome() << " pertence ao "
              << n << ".\n";
-        pAux = pAux->pAlunAnte;
-    }*/
+        pAux = pAux->pDiscAnte;
+    }
 }

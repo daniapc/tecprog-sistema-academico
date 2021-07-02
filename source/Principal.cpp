@@ -30,7 +30,6 @@ void Principal::DataSistema(){
 void Principal::Inicializa(){
     InicializaAlunos();
     InicializaProfessores();
-
     InicializaUniversidades();
     InicializaDepartamentos();
     InicializaDisciplinas();
@@ -76,6 +75,12 @@ void Principal::InicializaUniversidades(){
     Utfpr.setNome       ("UTFPR");
     Cambridge.setNome   ("Cambridge University");
     Princeton.setNome   ("Princeton University");
+
+    Utfpr.incluiDepto (&Informatica);
+    Utfpr.incluiDepto (&Eletronica);
+    Utfpr.incluiDepto (&Fisica_Utfpr);
+    Princeton.incluiDepto (&Fisica_Princeton);
+    Cambridge.incluiDepto (&Fisica_Cambridge);
     //Agrega os departamentos às universidades, não mais necessário por conta do uso do this
 
 }
@@ -83,8 +88,17 @@ void Principal::InicializaDepartamentos(){
     //Atribuir nomes para tais Departamentos.
     Fisica_Princeton.setNome    ("Departamento de Fisica de Princeton");
     Fisica_Cambridge.setNome    ("Departamento de Fisica de Cambridge");
+    Fisica_Utfpr.setNome        ("Departamento de Fisica da UTFPR");
     Informatica.setNome         ("Departamento de Informatica");
     Eletronica.setNome          ("Departamento de Eletronica");
+    
+
+    Informatica.incluirDisc      (&Tec_Prog);
+    Informatica.incluirDisc      (&Est_Dados_1);
+    Informatica.incluirDisc      (&Fund_Prog);  
+    Fisica_Princeton.incluirDisc (&Fisica_1);
+    Fisica_Utfpr.incluirDisc     (&Fisica_1);
+    Eletronica.incluirDisc       (&Circ_Elet);
 
     Fisica_Princeton.setUniv (&Princeton);
     Informatica.setUniv      (&Utfpr);
@@ -134,6 +148,8 @@ void Principal::ListaDptos(){
     Simao.qualDepTrabalho();
     Robocop.qualDepTrabalho();
 
+    cout << "\n";
+
     Utfpr.listaDeptos();
     Princeton.listaDeptos();
 }
@@ -141,27 +157,23 @@ void Principal::ListaDisc(){
     Informatica.listarDisc();
     //Informatica.listarDisc2();
     Eletronica.listarDisc();
+    Fisica_Princeton.listarDisc();
+    Fisica_Utfpr.listarDisc();
 
-    //Fund_Prog.listarAluno();
-    //Tec_Prog.listarAluno();
+    cout << "\n";
+
+    Fund_Prog.listarAluno();
+    Tec_Prog.listarAluno();
     Fisica_1.listarAluno();
     Est_Dados_1.listarAluno();
-    /*
-    Output:
-    Estudante Anna Julia de RA 5252341 se matriculou em Fisica Teorica 1.
-    Estudante Lucas de RA 2131231 se matriculou em Fisica Teorica 1.
-    Estudante Daniel de RA 2240246 se matriculou em Fisica Teorica 1.
-    Estudante Anna Julia de RA 5252341 se matriculou em Estrutura de Dados 1.
-    Estudante Daniel de RA 2240246 se matriculou em Estrutura de Dados 1.
-    */
 }
 
 void Principal::Executar(){
-    /*ListaIdades();
+    ListaIdades();
     cout << "\n";
     ListaUnivs();
     cout << "\n";
     ListaDptos();
-    cout << "\n";*/
+    cout << "\n";
     ListaDisc();
 }

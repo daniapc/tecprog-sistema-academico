@@ -24,7 +24,7 @@ int Aluno::getRa(){
 void Aluno::setDisc(Disciplina *pd){
     pDiscAssociada = pd;
 
-    pd->incluirAluno(this);
+    //pd->incluirAluno(this);
 }
 Disciplina* Aluno::getDisc(){
     return pDiscAssociada;

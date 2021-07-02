@@ -14,8 +14,8 @@ public:
     ElDisciplina();
     ~ElDisciplina();
 
-    ElDisciplina *pAlunProx,
-                 *pAlunAnte;
+    ElDisciplina *pDiscProx,
+                 *pDiscAnte;
 
     void setDisc(Disciplina* pd);
     Disciplina* getDisc();

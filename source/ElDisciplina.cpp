@@ -2,12 +2,14 @@
 #include "Departamento.h"
 
 ElDisciplina::ElDisciplina(){
-    pAlunProx = NULL;
-    pAlunAnte = NULL;
+    pDiscProx = NULL;
+    pDiscAnte = NULL;
+    pDisc = NULL;
 }
 ElDisciplina::~ElDisciplina(){
-    pAlunProx = NULL;
-    pAlunAnte = NULL;
+    pDiscProx = NULL;
+    pDiscAnte = NULL;
+    pDisc = NULL;
 }
 void ElDisciplina::setDisc(Disciplina* pd){
     pDisc = pd;

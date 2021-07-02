@@ -17,7 +17,7 @@ public:
     ListaDepartamentos(int na = 45); //não consigo alterar a quantidade de estudantes possível
     ~ListaDepartamentos();
 
-    void incluirDepto (Departamento* pa);
+    void incluirDepto (Departamento* pd);
     void listarDepto (string n); //queria evitar de passar parâmetro mas somente assim que consegui
     void listarDepto2(string n);
     

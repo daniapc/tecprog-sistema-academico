@@ -4,13 +4,9 @@
 Disciplina::Disciplina(int na):
 ObjAlunos(na){
     pDptoAssociado = NULL;
-    pDiscProx = NULL;
-    pDiscAnte = NULL;
 }
 Disciplina::~Disciplina(){
     pDptoAssociado = NULL;
-    pDiscProx = NULL;
-    pDiscAnte = NULL;
 }
 
 void Disciplina::setNome (string n){
@@ -23,7 +19,7 @@ string Disciplina::getNome (){
 void Disciplina::setDpto (Departamento* pdpto){
     pDptoAssociado = pdpto;
 
-    pdpto->incluirDisc(this);
+    //pdpto->incluirDisc(this);
 }
 
 Departamento* Disciplina::getDpto (){

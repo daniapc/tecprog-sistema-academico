@@ -3,9 +3,9 @@
 ListaDepartamentos::ListaDepartamentos(int na){
     pElDeptoAtual = NULL;
     pElDeptoPrim = NULL;    
-    cout << na << "\n";
     contaDepto = 0;
     tamDepto = na;
+    //cout << tamDepto << "\n";
 }
 ListaDepartamentos::~ListaDepartamentos(){
     ElDepartamento *paux1, 
@@ -22,13 +22,16 @@ ListaDepartamentos::~ListaDepartamentos(){
     pElDeptoPrim = NULL;      
 }
 
-void ListaDepartamentos::incluirDepto (Departamento* pa){
+void ListaDepartamentos::incluirDepto (Departamento* pd){
     //Importantíssimo criar esse ponteiro auxiliar do tipo ElDepartamento, alocá-lo e fazê-lo receber uma cópia do objeto
-    //cout << tamDepartamento << "\n";
-    if ((contaDepto < tamDepto) && (pa != NULL)){
+    //
+    //tamDepto = 45;
+    //contaDepto = 0;
+    
+    if ((contaDepto < tamDepto) && (pd != NULL)){
         ElDepartamento *paux = NULL;
         paux = new ElDepartamento();
-        paux->setDepto(pa);
+        paux->setDepto(pd);
         if (pElDeptoPrim == NULL){
             pElDeptoPrim = paux;
             pElDeptoAtual = paux;
@@ -38,32 +41,31 @@ void ListaDepartamentos::incluirDepto (Departamento* pa){
             paux->pDeptoAnte = pElDeptoAtual;
             pElDeptoAtual = paux; 
         }
-        contaDepto++;    }
+        contaDepto++;  
+    }
     else {
-        cout << "Turma cheia!\n";
+        cout << "Lista de Departamentos Cheia!\n";
     }
 }
 void ListaDepartamentos::listarDepto (string n){
     ElDepartamento* pAux = NULL;
     pAux = pElDeptoPrim;
 
-    /*while (pAux != NULL){
-        cout << "Estudante "
-             << pAux->getNome() << " de RA "
-             << pAux->getRa() << " se matriculou em "
+    while (pAux != NULL){
+        cout << "O " 
+             << pAux->getNome() << " pertence a "
              << n << ".\n";
         pAux = pAux->pDeptoProx;
-    }*/
+    }
 }
 void ListaDepartamentos::listarDepto2(string n){
     ElDepartamento* pAux = NULL;
     pAux = pElDeptoAtual;
 
-    /*while (pAux != NULL){
-        cout << "Estudante "
-             << pAux->getNome() << " de RA "
-             << pAux->getRa() << " se matriculou em "
+    while (pAux != NULL){
+        cout << "O " 
+             << pAux->getNome() << " pertence a "
              << n << ".\n";
         pAux = pAux->pDeptoAnte;
-    }*/
+    }
 }

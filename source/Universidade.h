@@ -3,14 +3,14 @@
 #define _UNIVERSIDADE_H_
 
 #include "stdafx.h"
-#include "Departamento.h"
+#include "ListaDepartamentos.h"
 
 class Universidade
 {
 private:
     string nome;
-    Departamento *pDeptoPri,
-                 *pDeptoAtual;
+
+    ListaDepartamentos ObjDepartamento;
 
 public:
     Universidade();
@@ -18,6 +18,7 @@ public:
 
     void setNome (string n = "");
     string getNome ();
+
     void incluiDepto(Departamento* pd);
     void listaDeptos();
     void listaDeptos2();

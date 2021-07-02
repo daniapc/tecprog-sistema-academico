@@ -25,6 +25,7 @@ private:
                  Cambridge;
     Departamento Fisica_Princeton, 
                  Fisica_Cambridge,
+                 Fisica_Utfpr,
                  Informatica,
                  Eletronica;
     Disciplina Fisica_1,

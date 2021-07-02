@@ -2,7 +2,7 @@
 #include "Universidade.h"
 
 Departamento::Departamento(){
-    pObjDisciplinas = new ListaDisciplinas(-1);
+    pObjDisciplinas = new ListaDisciplinas(10);
     pUnivAssociada = NULL;
 
 }
@@ -19,7 +19,7 @@ string Departamento::getNome(){
 void Departamento::setUniv (Universidade *pu){
     pUnivAssociada = pu;
 
-    pu->incluiDepto(this);
+    //pu->incluiDepto(this);
 };
 Universidade* Departamento::getUnv (){
     return pUnivAssociada;

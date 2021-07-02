@@ -8,8 +8,8 @@
 
 class ListaDisciplinas{
 private:
-    ElDisciplina *pElAlunPrim,
-                 *pElAlunAtual;    
+    ElDisciplina *pElDiscPrim,
+                 *pElDiscAtual;    
     int tamDisc,
         contaDisc;
     
